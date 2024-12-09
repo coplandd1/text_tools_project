@@ -53,7 +53,7 @@ for file in $WAYFILE; do
 	WAYLINE=$(dooline "$file")
 
 	WAYPEREP=$(awk -v WAYWC=$WAYWC -v WAYEP=$WAYEP 'BEGIN { print WAYWC / WAYEP }')
-	WAYMLU=$(awk -v WAYLINE=$WAYLINE -v WAYWC=$WAYWC 'BEGIN { print WAYLINE / WAYWC }')
+	WAYMLU=$(awk -v WAYLINE=$WAYLINE -v WAYWC=$WAYWC 'BEGIN { print WAYWC / WAYLINE }')
 	WAYRATIO=$(awk -v WAYTYPE=$WAYTYPE -v WAYWC=$WAYWC 'BEGIN { print WAYTYPE / WAYWC }')
 
 	echo $WAYPEREP >> Where_dialogue.txt
@@ -81,7 +81,7 @@ for file in $WNFILE; do
 	WNLINE=$(dooline "$file")
 
 	WNPEREP=$(awk -v WNWC=$WNWC -v WNEP=$WNEP 'BEGIN { print WNWC / WNEP }')
-	WNMLU=$(awk -v WNLINE=$WNLINE -v WNWC=$WNWC 'BEGIN { print WNLINE / WNWC }')
+	WNMLU=$(awk -v WNLINE=$WNLINE -v WNWC=$WNWC 'BEGIN { print WNWC / WNLINE }')
 	WNRATIO=$(awk -v WNTYPE=$WNTYPE -v WNWC=$WNWC 'BEGIN { print WNTYPE / WNWC }')
 
 	echo $WNPEREP >> What_dialogue.txt
@@ -110,7 +110,7 @@ for file in $MIFILE; do
 	MILINE=$(dooline "$file")
 
 	MIPEREP=$(awk -v MIWC=$MIWC -v MIEP=$MIEP 'BEGIN { print MIWC / MIEP }')
-	MIMLU=$(awk -v MILINE=$MILINE -v MIWC=$MIWC 'BEGIN { print MILINE / MIWC }')
+	MIMLU=$(awk -v MILINE=$MILINE -v MIWC=$MIWC 'BEGIN { print MIWC / MILINE }')
 	MIRATIO=$(awk -v MITYPE=$MITYPE -v MIWC=$MIWC 'BEGIN { print MITYPE / MIWC }')
 
 	echo $MIPEREP >> Mys_dialogue.txt
